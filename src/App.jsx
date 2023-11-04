@@ -39,7 +39,7 @@ function App() {
             </Layout>
 
             <Routes>
-              <Route path="/" element={<div>Home</div>} />
+              <Route path="/" element={<div>Home  uno</div>} />
               <Route path="/activity" element={<div>Activity</div>} />
               <Route path="/tasks" element={<div>Tasks</div>} />
               <Route path="/progress" element={<div>Progress</div>} />
