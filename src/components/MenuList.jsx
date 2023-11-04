@@ -1,15 +1,17 @@
 import { HomeOutlined, AppstoreOutlined, AreaChartOutlined, PayCircleOutlined, SettingOutlined, BarsOutlined  } from "@ant-design/icons";
 import { Menu } from "antd";
+import { Link} from 'react-router-dom'
 
 const MenuList = ({ darkTheme }) => {
     return (
         <Menu theme={darkTheme? 'dark' : 'light'} mode="inline" className="menu-bar">
             <Menu.Item key="home" icon={<HomeOutlined />}>
-                Home
+                <Link to="/">Home</Link>
+                
             </Menu.Item>
              
             <Menu.Item key="activity" icon={< AppstoreOutlined/>}>
-                Activity
+                <Link to="/activity">Activity</Link>
             </Menu.Item>
             <Menu.SubMenu key="tasks" icon={<BarsOutlined />} title="Task">
                 <Menu.Item key="task-1">Task 1</Menu.Item>
