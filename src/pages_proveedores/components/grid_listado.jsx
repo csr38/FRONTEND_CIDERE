@@ -1,41 +1,49 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { randomTraderName, randomEmail } from '@mui/x-data-grid-generator';
+import { randomTraderName, randomEmail, randomDate, randomUpdatedDate } from '@mui/x-data-grid-generator';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 80 },
-  { field: 'name', headerName: 'Name', width: 150 },
-  { field: 'email', headerName: 'Email', width: 150 },
-  { field: 'age', headerName: 'Age', type: 'number' },
+  { field: 'Nombre_Proveedor', headerName: 'Nombre Proveedor', width: 150 },
+  { field: 'Rut_proveedor', headerName: 'Rut Proveedor', width: 150 },
+  { field: 'Direccion', headerName: 'Dirección', width: 150 },
+  { field: 'Mail', headerName: 'Mail', width: 450 },
+  { field: 'Contacto', headerName: 'Contacto', width: 150 },
+  { field: 'Telefono_Contacto', headerName: 'Telefono Contacto', width: 150 },
+  { field: 'Categoria', headerName: 'Categoria', width: 150 },
+  { field: 'Comuna', headerName: 'Comuna', width: 150 },
+  { field: 'Fecha_Creacion', headerName: 'Fecha Creacion', type : 'dateTime', width: 150 },
 ];
 
 const rows = [
-  { id: 1, name: randomTraderName(), email: randomEmail(), age: 25 },
-  { id: 2, name: randomTraderName(), email: randomEmail(), age: 36 },
-  { id: 3, name: randomTraderName(), email: randomEmail(), age: 19 },
-  { id: 4, name: randomTraderName(), email: randomEmail(), age: 28 },
-  { id: 5, name: randomTraderName(), email: randomEmail(), age: 23 },
-  { id: 6, name: randomTraderName(), email: randomEmail(), age: 27 },
-  { id: 7, name: randomTraderName(), email: randomEmail(), age: 18 },
-  { id: 8, name: randomTraderName(), email: randomEmail(), age: 31 },
-  { id: 9, name: randomTraderName(), email: randomEmail(), age: 24 },
-  { id: 10, name: randomTraderName(), email: randomEmail(), age: 35 },
+  { id: 1, Nombre_Proveedor: randomTraderName(), Mail: randomEmail(), Fecha_Creacion: randomUpdatedDate()},
+  { id: 2, Nombre_Proveedor: randomTraderName(), Mail: randomEmail()},
+  { id: 3, Nombre_Proveedor: randomTraderName(), Mail: randomEmail()},
+  { id: 4, Nombre_Proveedor: randomTraderName(), Mail: randomEmail()},
+  { id: 5, Nombre_Proveedor: randomTraderName(), Mail: randomEmail()},
+  { id: 6, Nombre_Proveedor: randomTraderName(), Mail: randomEmail()},
+  { id: 7, Nombre_Proveedor: randomTraderName(), Mail: randomEmail()},
+  { id: 8, Nombre_Proveedor: randomTraderName(), Mail: randomEmail()},
+  { id: 9, Nombre_Proveedor: randomTraderName(), Mail: randomEmail()},
+  { id: 10, Nombre_Proveedor: randomTraderName(), Mail: randomEmail() },
 ];
 
 const GridListado = () => {
   const [filterModel, setFilterModel] = React.useState({
     items: [],
     quickFilterExcludeHiddenColumns: true,
-    quickFilterValues: ['1'],
+    quickFilterValues: [],
   });
 
   const [columnVisibilityModel, setColumnVisibilityModel] = React.useState({});
 
   return (
-    <Box sx={{ width: 1 }}>
+    
+    <Box >
+  
       <FormControlLabel
         checked={columnVisibilityModel.id !== false}
         onChange={(event) =>
@@ -55,7 +63,7 @@ const GridListado = () => {
         control={<Switch color="primary" size="small" />}
         label="Exclude hidden columns"
       />
-      <Box sx={{ height: 400 }}>
+      <Box>
         <DataGrid
           columns={columns}
           rows={rows}
@@ -71,7 +79,9 @@ const GridListado = () => {
           }
         />
       </Box>
+   
     </Box>
+    
   );
 }
 
