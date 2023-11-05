@@ -22,7 +22,8 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 
 
 
-import  IndexPage  from "./pages/IndexPage";
+import  IndexPage  from "./pages_principal/IndexPage";
+import PageListado from "./pages_proveedores/page_listado";
 
 const { Header, Sider } = Layout;
 
@@ -215,7 +216,7 @@ function App() {
           <Routes>
             <Route path="/" element={ <IndexPage/> } />
             <Route path="/activity" element={<div>Activity</div>} />
-            <Route path="/tasks" element={<div>Tasks</div>} />
+            <Route path="/listadoproveedores" element={ <PageListado /> } />
             <Route path="/progress" element={<div>Progress</div>} />
             <Route path="/payment" element={<div>Payment</div>} />
             <Route path="/setting" element={<div>Setting</div>} />

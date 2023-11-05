@@ -13,8 +13,10 @@ const MenuList = ({ darkTheme }) => {
             <Menu.Item key="activity" icon={< AppstoreOutlined/>}>
                 <Link to="/activity">Activity</Link>
             </Menu.Item>
-            <Menu.SubMenu key="tasks" icon={<BarsOutlined />} title="Task">
-                <Menu.Item key="task-1">Task 1</Menu.Item>
+            <Menu.SubMenu key="tasks" icon={<BarsOutlined />} title="Proveedores">
+                <Menu.Item key="task-1">
+                    <Link to="/listadoproveedores">Listado</Link>
+                </Menu.Item>
                 <Menu.Item key="task-2">Task 2</Menu.Item>
                 <Menu.SubMenu key="subtasks" title="Substasks">
                     <Menu.Item key="subtask-1">Subtask 1</Menu.Item>
